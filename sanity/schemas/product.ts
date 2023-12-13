@@ -12,6 +12,7 @@ export default {
         name: 'images',
         type: 'array',
         title: 'Product Images',
+        // give it option to upload image
         of: [{type: 'image'}]
       },
       {
@@ -22,12 +23,26 @@ export default {
       {
         name: 'slug',
         type: 'slug',
-        title: 'Product Slug'
+        title: 'Product Slug',
+        // let it generage slug by name
+        options:{
+          source:'name'
+        }
       },
       {
         name: 'price',
         type: 'number',
         title: 'Price'
       },
+      {
+        name: 'category',
+        title: 'Product Category', 
+        type: 'reference', 
+        to: [
+          {
+            type: 'category'
+          }
+        ]
+      }
     ]
   }
