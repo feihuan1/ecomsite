@@ -6,10 +6,10 @@ import { usePathname } from "next/navigation"
 
 
 const links = [
-    {name:'Home', href: '/'},
-    {name:'Men', href: '/Men'},
-    {name:'Women', href: '/Women'},
-    {name:'Teens', href: '/Teens'},
+    {title:'Home', link: '/'},
+    {title:'Men', link: '/Men'},
+    {title:'Women', link: '/Women'},
+    {title:'Teens', link: '/Teens'},
 ]
 
 
@@ -28,19 +28,19 @@ const Navbar = () => {
         <nav className="hidden lg:flex gap-12 2xl:ml-16">
             {links.map((link, index) => (
                 <div key={`Narbar link ${index}`}>
-                    {pathname === link.href ? (
+                    {pathname === link.link ? (
                         <Link
-                            href={link.href} 
+                            href={link.link} 
                             className="text-lg font-semibold text-primary"
                         >
-                            {link.name}
+                            {link.title}
                         </Link>
                     ): (
                         <Link
-                            href={link.href} 
+                            href={link.link} 
                             className="text-lg font-semibold text-gray-600 transition duration-100 hover:text-primary"
                         >
-                        {link.name}
+                        {link.title}
                         </Link>
                     )}
                 </div>
@@ -53,7 +53,7 @@ const Navbar = () => {
                     className="flex flex-col gap-y-1.5 h-12 w-12 sm:h-20 sm:w-20 md:h-24 md:w-24 rounded-none"
                 >
                     <ShoppingBag /> 
-                    <span className="hidden text-xs font-semibold text-gray-500">Cart</span>
+                    <span className="hidden text-xs font-semibold text-gray-500 sm:block">Cart</span>
                 </Button>
         </div>
     </div>
