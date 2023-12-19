@@ -24,7 +24,7 @@ const ImageGallery = ({ images }: ImageGalleryProps) => {
             key={`image-gallery-${idx}`}
           >
             <Image
-            onClick={() => setThumbnail(image)}
+            onClick={() => handleThumbnailChange(image)}
               src={urlFor(image).url()}
               width={200}
               height={200}
@@ -43,6 +43,10 @@ const ImageGallery = ({ images }: ImageGalleryProps) => {
                 height={500} 
                 className="w-full h-full object-cover object-center"
             />
+
+            <span className="absolute left-0 top-0 rounded-br-lg bg-red-500 px-3 py-1.5 text-sm uppercase tracking-wider text-white">
+              Sale
+            </span>
       </div>
     </div>
   );
