@@ -2,7 +2,7 @@ import ImageGallery from "@/components/shared/ImageGallery";
 import { Button } from "@/components/ui/button";
 import { client } from "@/lib/sanity";
 import { fullProduct } from "@/lib/types";
-import { Star } from "lucide-react";
+import { Star, Truck } from "lucide-react";
 
 async function getItemBySlug(slug: string) {
   const query = `*[_type=="product" && slug.current == "${slug}"][0] {
@@ -17,7 +17,6 @@ async function getItemBySlug(slug: string) {
 
   const data = await client.fetch(query);
 
-  console.log(data);
   return data;
 }
 
@@ -61,9 +60,20 @@ const page = async ({ params }: { params: { slug: string } }) => {
                   </div>
 
                   <span className="text-sm text-gray-500">
-                     Plus tax&shipping
+                     Include tax & shipping
                   </span>
               </div>
+              <div className="mb-6 flex items-end gap-2 text-gray-500">
+                  <Truck className="w-6 h-6" /> 
+                  <span className="text-sm">2-4 Days Shipping</span>
+              </div>
+
+              <div className="flex gap-2.5">
+                <Button>Add To Card</Button>
+                <Button variant={'secondary'}>Check Out Now</Button>
+              </div>
+
+              <p className="mt-12 text-base text-gray-500 tracking-wide">{data.description}</p>
             </div>
           </div>
         </div>
