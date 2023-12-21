@@ -1,3 +1,5 @@
+"use client"
+
 import { ReactNode } from "react"
 import { CartProvider as Provider } from "use-shopping-cart"
 
