@@ -30,6 +30,11 @@ export default {
         }
       },
       {
+        name: 'price_id', 
+        title: 'Strip Price ID', 
+        type: 'string'
+      },
+      {
         name: 'price',
         type: 'number',
         title: 'Price'

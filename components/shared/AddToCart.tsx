@@ -1,35 +1,38 @@
-"use client"
-import { useShoppingCart } from "use-shopping-cart"
-import { Button } from "../ui/button"
+"use client";
+
+import { Button } from "@/components/ui/button";
 import { urlFor } from "@/lib/sanity";
+import { ProductCart } from "@/lib/types";
+import { useShoppingCart } from "use-shopping-cart";
 
-export interface ProductCart {
-    name: string; 
-    description: string; 
-    price: number; 
-    currency: string; 
-    image: any;
-}
 
-const AddToCart = ({currency, description, image, name, price}:ProductCart) => {
-    const {addItem, handleCartClick} = useShoppingCart()
 
-    const product = {
-        name: name, 
-        description: description, 
-        price: price, 
-        currency: currency, 
-        image: urlFor(image).url(), 
-        id:'sdfsdfs'
-    }
 
+export default function AddToBag({
+  currency,
+  description,
+  image,
+  name,
+  price,
+  price_id,
+}: ProductCart) {
+  const { addItem, handleCartClick } = useShoppingCart();
+
+  const product = {
+    name: name,
+    description: description,
+    price: price,
+    currency: currency,
+    image: urlFor(image).url(),
+    price_id: price_id,
+  };
   return (
-    <Button onClick={() => {
-        addItem(product), handleCartClick()
-    } }>
+    <Button
+      onClick={() => {
+        addItem(product), handleCartClick();
+      }}
+    >
       Add To Cart
     </Button>
-  )
+  );
 }
-
-export default AddToCart
