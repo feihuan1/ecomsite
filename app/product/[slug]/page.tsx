@@ -1,5 +1,5 @@
 import AddToCart from "@/components/shared/AddToCart";
-import Checkoutnow from "@/components/shared/CheckoutNow";
+import Checkoutnow from "../../../components/shared/CheckoutNow";
 import ImageGallery from "@/components/shared/ImageGallery";
 import { Button } from "@/components/ui/button";
 import { client } from "@/lib/sanity";
