@@ -1,5 +1,5 @@
 import AddToCart from "@/components/shared/AddToCart";
-import Checkoutnow from "../../../components/shared/CheckoutNow";
+// import Checkoutnow from "../../../components/shared/CheckoutNow";
 import ImageGallery from "@/components/shared/ImageGallery";
 import { Button } from "@/components/ui/button";
 import { client } from "@/lib/sanity";
@@ -83,7 +83,7 @@ const page = async ({ params }: { params: { slug: string } }) => {
                 key={data._id}
                 price_id={data.price_id}
               />
-              <Checkoutnow
+              {/* <Checkoutnow
                 currency="USD"
                 description={data.description}
                 image={data.images[0]}
@@ -91,7 +91,7 @@ const page = async ({ params }: { params: { slug: string } }) => {
                 price={data.price}
                 key={data._id}
                 price_id={data.price_id}
-              />
+              /> */}
             </div>
 
             <p className="mt-12 text-base text-gray-500 tracking-wide">
