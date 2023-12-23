@@ -1,4 +1,5 @@
 import AddToCart from "@/components/shared/AddToCart";
+import Checkoutnow from "@/components/shared/CheckoutNow";
 import ImageGallery from "@/components/shared/ImageGallery";
 import { Button } from "@/components/ui/button";
 import { client } from "@/lib/sanity";
@@ -79,10 +80,18 @@ const page = async ({ params }: { params: { slug: string } }) => {
                 image={data.images[0]}
                 name={data.name}
                 price={data.price}
-                key={data._id} 
+                key={data._id}
                 price_id={data.price_id}
               />
-              <Button variant={"secondary"}>Check Out Now</Button>
+              <Checkoutnow
+                currency="USD"
+                description={data.description}
+                image={data.images[0]}
+                name={data.name}
+                price={data.price}
+                key={data._id}
+                price_id={data.price_id}
+              />
             </div>
 
             <p className="mt-12 text-base text-gray-500 tracking-wide">
