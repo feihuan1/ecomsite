@@ -1,6 +1,7 @@
 import Newest from "@/components/shared/Newest";
 import Hero from "../components/shared/Hero";
 
+export const dynamic = "force-dynamic"
 
 export default function Home() {
   return (

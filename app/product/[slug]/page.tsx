@@ -23,6 +23,8 @@ async function getItemBySlug(slug: string) {
   return data;
 }
 
+export const dynamic = "force-dynamic"
+
 const page = async ({ params }: { params: { slug: string } }) => {
   const data: fullProduct = await getItemBySlug(params.slug);
 

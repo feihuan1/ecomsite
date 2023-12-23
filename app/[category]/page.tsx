@@ -19,6 +19,7 @@ async function getDataByCategory(category: string) {
       return data
 }
 
+export const dynamic = "force-dynamic"
 
 const page = async({params}: {params: {category: string}}) => {
 

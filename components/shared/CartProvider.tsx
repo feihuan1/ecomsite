@@ -10,8 +10,8 @@ const CartProvider = ({children}: {children: ReactNode}) => {
         mode="payment" 
         cartMode="client-only" 
         stripe={process.env.NEXT_PUBLIC_STRIPE_KEY as string} 
-        successUrl="http://localhost:3000/payment/success" 
-        cancelUrl="http://localhost:3000/payment/error" 
+        successUrl="https://ecomsite-bp7zyn4gl-pengfeihuans-projects.vercel.app/payment/success" 
+        cancelUrl="https://ecomsite-bp7zyn4gl-pengfeihuans-projects.vercel.app/payment/error" 
         currency="USD" 
         billingAddressCollection={false} 
         // shopping cart will persist in local storage
