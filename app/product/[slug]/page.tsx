@@ -85,7 +85,8 @@ const page = async ({ params }: { params: { slug: string } }) => {
                 key={data._id}
                 price_id={data.price_id}
               />
-              <BuyNow
+              <BuyNow 
+                
                 currency="USD"
                 description={data.description}
                 image={data.images[0]}
