@@ -82,7 +82,7 @@ const page = async ({ params }: { params: { slug: string } }) => {
                 image={data.images[0]}
                 name={data.name}
                 price={data.price}
-                key={data._id}
+                key={`AddToCart ${data._id}`}
                 price_id={data.price_id}
               />
               <BuyNow 
@@ -92,7 +92,7 @@ const page = async ({ params }: { params: { slug: string } }) => {
                 image={data.images[0]}
                 name={data.name}
                 price={data.price}
-                key={data._id}
+                key={`BuyNow ${data._id}`}
                 price_id={data.price_id}
               />
             </div>
